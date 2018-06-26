@@ -4,7 +4,7 @@ const
     title: String,
     author: String,
     pages: Number
-  })
+  }, { timestamps: true })
 
 const Book = mongoose.model('Book', bookSchema)
 
