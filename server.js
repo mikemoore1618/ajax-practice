@@ -14,9 +14,10 @@ mongoose.connect(process.env.MONGODB_URI, (err) => {
 
 app.use(logger('dev'))
 app.use(express.json())
+app.use(express.static('public'))
 
 app.use('/api/books', booksRouter)
 
 app.listen(PORT, (err) => {
-  console.log(err || `Server running on port ${PORT} 🤘`)
+  console.log(err || `Server running on Port ${PORT} 🤘`)
 })

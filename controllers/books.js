@@ -13,5 +13,13 @@ module.exports = {
     Book.create(req.body, (err, savedBook) => {
       res.json({ success: true, message: "book created.", book: savedBook })
     })
+  },
+
+  destroy: (req, res) => {
+    let id = req.params.id
+    Book.findByIdAndRemove(id, (err, deletedBook) => {
+      if (err) return console.log(err)
+      res.json({ success: true, message: "book deleted." })
+    })
   }
 }
